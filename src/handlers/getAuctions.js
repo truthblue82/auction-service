@@ -8,33 +8,27 @@ import createError from 'http-errors';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-async function getAuction(event, context) {
-  let auction;
-  const { id } = event.pathParameters;
+async function getAuctions(event, context) {
+  let auctions;
 
   try {
-      const result = await dynamodb.get({
-          TableName: process.env.AUCTIONS_TABLE_NAME,
-          Key: { id }
+      const result = await dynamodb.scan({
+          TableName: process.env.AUCTIONS_TABLE_NAME
       }).promise();
 
-      auction = result.Item;
+      autions = result.Items;
   } catch (error) {
       console.log(error);
       throw new createError.InternalServerError(error);
   }
 
-  if (!auction) {
-      throw new createError.NotFound(`Auction with ID "${id}" not found!`);
-  }
-
   return {
     statusCode: 200,
-    body: JSON.stringify(auction),
+    body: JSON.stringify(auctions),
   };
 }
 
-export const handler = middy(getAuction)
+export const handler = middy(getAuctions)
   .use(httpJsonBodyParser())
   .use(httpEventNormalizer())
   .use(httpErrorHandler());
