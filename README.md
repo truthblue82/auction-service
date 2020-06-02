@@ -1,13 +1,40 @@
-# Codingly.io: Base Serverless Framework Template
-
-https://codingly.io
+# Using Serverless framework for build sample project.
 
 ## What's included
+
 * Folder structure used consistently across our projects.
 * [serverless-pseudo-parameters plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Allows you to take advantage of CloudFormation Pseudo Parameters.
 * [serverless-bundle plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Bundler based on the serverless-webpack plugin - requires zero configuration and fully compatible with ES6/ES7 features.
 
+## Install AWS CLI version 2
+
+Install from the link: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+
+After finishing, check AWS by command:
+```
+$>aws --version
+```
+
+## Install Serverless framework
+
+Run command:
+```
+$>npm install -g serverless
+```
+
+Check serverless after finishing:
+```
+$>sls --version
+
+Framework Core: 1.71.3
+Plugin: 3.6.12
+SDK: 2.3.1
+Components: 2.30.12
+```
+
 ## Getting started
+
+Run command below:
 ```
 sls create --name YOUR_PROJECT_NAME --template-url https://github.com/codingly-io/sls-base
 cd YOUR_PROJECT_NAME
