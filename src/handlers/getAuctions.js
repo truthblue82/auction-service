@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import AWS from 'aws-sdk';
 import middy from '@middy/core';
 import httpJsonBodyParser from '@middy/http-json-body-parser';
@@ -16,21 +15,19 @@ async function getAuctions(event, context) {
           TableName: process.env.AUCTIONS_TABLE_NAME
       }).promise();
 
-      autions = result.Items;
+      auctions = result.Items;
   } catch (error) {
       console.log(error);
       throw new createError.InternalServerError(error);
   }
 
   return {
-    statusCode: 200,
-    body: JSON.stringify(auctions),
+      statusCode: 200,
+      body: JSON.stringify(auctions),
   };
 }
 
 export const handler = middy(getAuctions)
-  .use(httpJsonBodyParser())
-  .use(httpEventNormalizer())
-  .use(httpErrorHandler());
-
-
+    .use(httpJsonBodyParser())
+    .use(httpEventNormalizer())
+    .use(httpErrorHandler());
