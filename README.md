@@ -41,6 +41,16 @@ cd YOUR_PROJECT_NAME
 npm install
 ```
 
+Configure for AWS:
+
+```
+$>aws configure
+AWS Access Key ID [None]:
+AWS Secret Access Key [None]:
+Default region name [None]:ap-southeast-1 (depend on you)
+Default output format [None]:yaml / json ( depend on you )
+```
+
 Add region `region: ap-southeast-1` into provider
 Then run below command:
 
@@ -48,7 +58,7 @@ Then run below command:
 #deploy
 $>sls deploy -v
 
-#create function:
+#deploy a new function:
 $>sls deploy -f functionName -v
 ```
 
