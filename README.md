@@ -88,9 +88,6 @@ ServerlessDeploymentBucketName: auction-service-dev-serverlessdeploymentbucket-1
 Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
 ```
 
-Copy endpoints url https://d6foz2wahj.execute-api.ap-southeast-1.amazonaws.com/dev/hello and paste into browser, we will see content:
-{"message":"Hello from https://codingly.io"}
-
 ## Remove serverless:
 
 $>sls remove -v
