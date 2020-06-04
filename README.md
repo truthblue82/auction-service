@@ -96,4 +96,7 @@ $>sls remove -v
 
 ```
 $>sls logs -f processAuctions
+
+Output logs
+$>sls invoke -f processAuctions -l
 ```
