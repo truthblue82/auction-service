@@ -91,3 +91,9 @@ Serverless: Run the "serverless" command to setup monitoring, troubleshooting an
 ## Remove serverless:
 
 $>sls remove -v
+
+## Process auction:
+
+```
+$>sls logs -f processAuctions
+```
