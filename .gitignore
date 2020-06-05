@@ -1,11 +1,19 @@
 # package directories
-node_modules
+auction_service/node_modules
+auth_service/node_modules
+notification_service/node_modules
+
 jspm_packages
 
 .vscode
 
 # Serverless directories
-.serverless
-
+auction_service/.serverless
+auth_service/.serverless
+notification_service/.serverless
 # Webpack directories
-.webpack
+auction_service/.webpack
+auth_service/.webpack
+notification_service/.webpack
+
+auth_service/secret.pem
