@@ -4,4 +4,10 @@
 * authenticate service
 * notification service
 
-Go to each service for more detail
+## How to deploy
+
+* Deploy authenticate service first.
+* Deploy notification service.
+* Deply auction service.
+
+Go to each service for more detail.

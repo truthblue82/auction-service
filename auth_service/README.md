@@ -72,3 +72,18 @@ functions:
 ```
 
 If everything was set up correctly, all incoming requests to your `someFunction` Lambda will first be authorized. You can find the JWT claims at `event.requestContext.authorizer`.
+
+## How to generate `id_token` for authentication
+
+Signup in the link: auth0.com
+
+Run the below command with information from the auth0.com
+```
+curl --location --request POST 'https://YOUR_HOSTNAME/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'client_id=CLIENT_ID' \
+--data-urlencode 'username=USERNAME' \
+--data-urlencode 'password=PASSWORD' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'scope=openid'
+```
