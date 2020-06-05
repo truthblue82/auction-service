@@ -2,6 +2,7 @@
 auction_service/node_modules
 auth_service/node_modules
 notification_service/node_modules
+frontend/node_modules
 
 jspm_packages
 
@@ -17,3 +18,13 @@ auth_service/.webpack
 notification_service/.webpack
 
 auth_service/secret.pem
+
+.env
+frontend/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
